@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftMart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        /* Header */
+        header {
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            }
+
+        /* Logo Styling */
+        .logo {
+            flex: 0 0 auto;
+            font-size: 24px;
+            font-weight: bold;
+            color: darkgreen;
+        }
+        
+        /* Search Bar */
+        header form {
+            flex: 1 1 auto;
+            display: flex;
+        }
+        .search-bar {
+            flex: 1 1 auto;
+            margin-left: 15px;
+        }
+        .search-bar input[type="text"] {
+            width: 90%;
+            padding: 8px 12px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            background-color: #f9f9f9;
+            
+        }
+        .search-bar input[type="text"]:focus {
+            border-color: #1a7f37;
+            background-color: #fff;
+            outline: none;
+        }
+
+        /* Login Buttons */
+        .login-buttons {
+            display: flex;
+            gap: 10px;
+            flex: 0 0 auto;
+        }
+        .login-button {
+            background-color: #1a7f37;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        .signup-button {
+            background-color: #1a7f37;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        .login-button:hover, .signup-button:hover {
+            background-color: #079c31;
+        }
+
+        /* Promo Banner */
+        .promo-banner {
+            background-color: rgb(12, 78, 30);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 24px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .promo-text {
+            font-size: 28px;
+            margin-bottom: 20px;
+            max-width: 500px;
+            flex: 1;
+        }
+        .promo-button {
+            background-color: rgb(0, 198, 0);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        .promo-button:hover {
+            background-color: #079c31;
+        }
+        .terms {
+            font-size: 12px;
+            margin-top: 10px;
+            color: #ccc;
+        }
+        .promo-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .promo-image img {
+            width: 100%;
+            max-width: 600%;
+            max-height: 5cm;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Content */
+        main {
+            padding: 24px;
+        }
+        main h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font: Arial, sans-serif;
+            text-align: center;
+        }
+        .shoprite, .picknpay, .farmers, .pep {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding:  8px 8px;
+            margin-bottom: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .shoprite img {
+            width: 100px;                  /* set image size */
+            display: block;                /* removes inline spacing */
+            border-radius: 6px;
+        } .picknpay img {
+            width: 150px;                  
+            display: block;                
+            border-radius: 6px;
+        } .farmers img {
+            width: 150px;                  
+            display: block;                
+            border-radius: 6px;
+        } .pep img {
+            width: 100px;                  
+            display: block;                
+            border-radius: 6px;
+        }
+        .shoprite h2, .picknpay h2, .farmers h2, .pep h2 {
+            font-size: 20px;
+            margin: 0;
+        }
+        .shoprite a, .picknpay a, .farmers a, .pep a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .shoprite a:hover, .picknpay a:hover, .farmers a:hover, .pep a:hover {
+            background: f0f0f0;
+            text-decoration: underline; 
+            border-color: #1a7f37;
+        }
+        /* Footer */
+        footer {
+            background-color: #1a7f37;
+            color: white;
+            text-align: center;
+            padding: 12px 24px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+       
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">SwiftMart</div>
+       
+        <!-- Search Bar -->
+         <form action="/search" method="get">
+            <div class="search-bar">
+                <input type="text" placeholder="&#x1F50D; Search products and stores..." name="query">
+            </div>
+        </form>
+        
+        <!-- Login Buttons-->
+         <div class="login-buttons">
+            <button class="login-button">Log in</button>
+            <button class="signup-button">Sign up</button>
+         </div>
+    </header>
+
+    <!-- Promo banner-->
+    <section class="promo-banner">
+        <div class="promo-content">
+            <h1 class="promo-text">Order gloceries today and get free delivery on first sign up</h1>
+            <button class="promo-button">Sign up to get K0 delivery fee*</button>
+            <p class="terms">*valid for first order only.</p>
+        </div>
+        <!-- promo image-->
+        <div class="promo-image">
+            <img src="/images/promo image.jpg" alt="Promo Image">
+        </div>
+    </section>
+    <!-- Main Content -->
+    <main>
+        <h1>SUPERMARKETS</h1>
+        <!-- Store listings would go here -->
+        <!--Shoprite-->
+        <button class="shoprite">
+            <a href="shoprite.html">
+                <img src="/images/shopritelogo.jpeg" alt="Shoprite Logo" >
+                <h2>Shoprite</h2>
+            </a>
+         </button>
+
+          <!--Pick n' Pay-->
+        <button class="picknpay">
+            <a href="picknpay.html">
+                <img src="/images/pickn'pay_logo.jpg" alt="Pick n' Pay Logo" >
+                <h2>Pick n' Pay</h2>
+            </a>
+         </button>
+         <br>
+
+    <!--Buy fresh goods from farmers directly-->
+        <h1>FRESH FARM PRODUCE</h1>
+            <button class="farmers">
+                <a href="afrifresh.html">
+                    <img src="/images/afrifreshlogo.png" alt="Afrifresh Logo" >
+                    <h2>Afrifresh</h2>
+                </a>
+            </button>
+            <br>
+
+    <!--clothing stores-->
+        <h1>CLOTHING STORES</h1>
+         <button class="pep">
+            <a href="pep.html">
+                <img src="/images/peplogo.jpeg" alt="Pep Logo" >
+                <h2>PEP</h2>
+            </a>
+         </button>
+         <br>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 SwiftMart. All rights reserved.</p>  
+    </footer>
+</body>
+</html>
